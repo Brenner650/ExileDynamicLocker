@@ -17,9 +17,7 @@ _lockerAmount = player getVariable ["ExileLocker", 0];
 
 // Make numbers look better when large > 2 decimal places
 _lockerAmountDsplay = _lockerAmount;
-if( _lockerAmountDsplay >= 999999 ) then { 
-										if( _lockerAmountDsplay >= 1000000 ) then {_lockerAmountDsplay = _lockerAmountDsplay / 1000000; _prefixAmountDsplay = "M" } 
-										} else { _prefixAmountDsplay = "" };
+if( _lockerLimitDisplay > 999999 ) then { _lockerLimitDisplay = _lockerLimitDisplay / 1000000; _prefixLimitDisplay = "M" } else { _prefixLimitDisplay = "" };
 _lockerAmountDsplay = [_lockerAmountDsplay,2] call BIS_fnc_cutDecimals;
 // End number clean-up
 
@@ -27,9 +25,7 @@ _lockerLimit = ([ExileClientPlayerScore] call LL_getLockerLimit);
 
 // Make numbers look better when large > 2 decimal places
 _lockerLimitDisplay = _lockerLimit;
-if( _lockerLimitDisplay >= 999999 ) then { 
-										if( _lockerLimitDisplay >= 1000000 ) then {_lockerLimitDisplay = _lockerLimitDisplay / 1000000; _prefixLimitDisplay = "M" } 
-										} else { _prefixLimitDisplay = "" };
+if( _lockerLimitDisplay > 999999 ) then { _lockerLimitDisplay = _lockerLimitDisplay / 1000000; _prefixLimitDisplay = "M" } else { _prefixLimitDisplay = "" };
 _lockerLimitDisplay = [_lockerLimitDisplay,2] call BIS_fnc_cutDecimals;
 // End number clean-up
 
@@ -44,9 +40,7 @@ _inventoryAmountString = _inventoryAmount call ExileClient_util_string_exponentT
 
 // Make numbers look better when large > 2 decimal places
 _inventoryAmountDisplay = _inventoryAmount;
-if( _inventoryAmountDisplay >= 999999 ) then { 
-										if( _inventoryAmountDisplay >= 1000000 ) then {_inventoryAmountDisplay = _inventoryAmountDisplay / 1000000; _prefixAmountDisplay = "M" } 
-										} else { _prefixAmountDisplay = "" };
+if( _lockerLimitDisplay > 999999 ) then { _lockerLimitDisplay = _lockerLimitDisplay / 1000000; _prefixLimitDisplay = "M" } else { _prefixLimitDisplay = "" };
 _inventoryAmountDisplay = [_inventoryAmountDisplay,2] call BIS_fnc_cutDecimals;
 // End number clean-up
 

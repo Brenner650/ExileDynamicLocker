@@ -36,9 +36,7 @@ try
 
 // Make numbers look better when large > 2 decimal places
 _lockerLimitDisplay = _lockerLimit;
-if( _lockerLimitDisplay >= 999999 ) then { 
-										if( _lockerLimitDisplay >= 1000000 ) then {_lockerLimitDisplay = _lockerLimitDisplay / 1000000; _prefixLimitDisplay = "M" } 
-										} else { _prefixLimitDisplay = "" };
+if( _lockerLimitDisplay > 999999 ) then { _lockerLimitDisplay = _lockerLimitDisplay / 1000000; _prefixLimitDisplay = "M" } else { _prefixLimitDisplay = "" };
 _lockerLimitDisplay = [_lockerLimitDisplay,2] call BIS_fnc_cutDecimals;
 // End number clean-up	
 	
